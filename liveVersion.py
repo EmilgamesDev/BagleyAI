@@ -4,24 +4,6 @@ import whisper
 import pyaudio
 import wave
 
-def record_audio():
-    FORMAT = pyaudio.paInt16
-    CHANNELS = 1
-    RATE = 16000
-    CHUNK = 1024
-    RECORD_SECONDS = 3
-    WAVE_OUTPUT_FILENAME = "test.mp3"
-
-    audio = pyaudio.PyAudio()
-
-    stream = audio.open(
-        format=FORMAT,
-        channels=CHANNELS,
-        rate=RATE,
-        input=True,
-        frames_per_buffer=CHUNK,
-        input_device_index=2
-
 model = whisper.load_model("base")
 result = model.transcribe("./audio/test.mp3")
 print(result["text"])
