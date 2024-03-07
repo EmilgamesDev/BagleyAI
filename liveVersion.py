@@ -31,6 +31,7 @@ engine.setProperty('voice', "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices
 engine.setProperty("rate", 150)
 
 user_input = input()
+user_input = "Who are you?"
 print(user_input)
 stream = ollama.chat(
     model='bagley',
